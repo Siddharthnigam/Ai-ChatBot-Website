@@ -1,0 +1,259 @@
+{% extends "base.html" %}
+{% load static%}
+
+
+{% block body %}
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    background: white;
+    color: #333;
+  }
+
+ .hello h1, h2 {
+    color: #000;
+  }
+
+  .hello .section {
+    margin: 50px auto;
+    padding: 30px;
+    max-width: 900px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    line-height: 1.8;
+  }
+
+  .hello .feature {
+    background-color: #e3f7e3;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .hello .feature:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  .hello h2 {
+    font-family: 'Arial', sans-serif;
+    color: #007f00;
+  }
+
+  .hello p {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #555;
+    font-family: 'Georgia', serif;
+    line-height: 1.6;
+  }
+
+  .hello .button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: #007f00;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .hello .button:hover {
+    background-color: #005a00;
+  }
+
+  
+.footer {
+    text-align: center;
+    padding: 40px;
+    background-color: #000; /* Black background */
+    color: #fff; /* White font */
+}
+
+.footer h2 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    color: #fff; /* Ensure all text remains white */
+}
+
+.demo-button {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #28a745; /* Keep the button green for contrast */
+    color: #fff; /* White text */
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.demo-button:hover {
+    background-color: #218838;
+}
+
+
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    flex-wrap: wrap; /* Maintains alignment on smaller screens */
+    gap: 20px;
+}
+
+.footer-logo {
+    flex: 1;
+    text-align: left;
+}
+
+.footer-logo .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #28a745; /* Adds a distinct green color to the brand name */
+}
+
+.footer-logo .social-icons a img {
+    filter: brightness(0) invert(1); /* Adjusts icons for black background */
+}
+
+.footer-links {
+    flex: 1;
+}
+
+.footer-links h4 {
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links ul li {
+    margin-bottom: 8px;
+}
+
+.footer-links ul li a {
+    text-decoration: none;
+    color: #fff; /* Links in white */
+}
+
+.footer-links ul li a:hover {
+    color: #28a745; /* Green hover color for visibility */
+}
+
+.footer-newsletter {
+    flex: 1;
+}
+
+.footer-newsletter h4 {
+    color: #fff;
+}
+
+.footer-newsletter input {
+    padding: 10px;
+    width: calc(100% - 50px);
+    border: 1px solid #555;
+    background-color: #000;
+    color: #fff;
+    border-radius: 5px 0 0 5px;
+}
+
+.footer-newsletter button {
+    padding: 10px;
+    background-color: #28a745;
+    border: none;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+}
+
+
+</style>
+<div class="hello">
+<div style="text-align: center; margin: 50px;" id="services">
+    <h1 style="font-family: 'Arial', sans-serif; color: #333; font-size: 3rem; font-weight: 600;">Our Services</h1>
+    <p style="margin-top: 20px; font-size: 22px; color: #666; font-size: 2rem; font-weight: 600; font-family: 'Georgia', serif; line-height: 1.8;">
+        At Jugglers.in, we offer advanced AI chatbot solutions to suit your diverse needs.
+    </p>
+</div>
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; max-width: 1200px; margin: auto;" id="features">
+    <!-- Normal AI Chatbot -->
+    <div class="feature">
+        <h2>Normal AI Chatbot</h2>
+        <p>
+            Enjoy a state-of-the-art AI assistant designed to handle your queries effectively and efficiently, available anytime to meet your needs.
+        </p>
+      <a href="{% url 'ai' %}"> <button class="button">Click to use</button></a> 
+    </div>
+
+    <!-- Custom AI Chatbot -->
+    <div class="feature">
+        <h2>Custom AI Chatbot</h2>
+        <p>
+            Create your own AI assistant by training it with custom information tailored to your specific requirements and goals.
+        </p>
+      <a href="{% url 'train_ai' %}">  <button class="button">Click to use</button></a>
+    </div>
+</div>
+</div>
+
+
+<br><br><br><br><br><br><br><br><br><br>
+<section class="footer">
+    <h2>Welcome To Jugglers.in.</h2>
+    <a href="#" class="demo-button">Get Started →</a>
+    <div class="footer-content">
+        <div class="footer-logo">
+            <span class="logo">Jugglers.in</span>
+            <p>Copyright © 2025 Jugglers.in. All rights reserved</p>
+      
+        </div>
+        <div class="footer-links">
+            <ul>
+                <li><a href="#"> Homw</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact us</a></li>
+                <li><a href="#">About us</a></li>
+                <li><a href="#">Login </a></li>
+            </ul>
+        </div>
+       
+        <div class="footer-newsletter">
+            <h4>Stay up to date</h4>
+            <form action="#" method="post">
+                <input type="email" placeholder="Enter your email">
+                <button type="submit"><img src="{% static 'myapp/paper-plane-icon.png' %}" alt="Send"></button>
+            </form>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script>
+    // Services Section Animation
+    gsap.from("#services h1", { duration: 1.5, opacity: 0, y: -50, ease: "power2.out" });
+    gsap.from("#services p", { duration: 1.5, opacity: 0, y: 50, delay: 0.3, ease: "power2.out" });
+
+    // Features Animation
+    gsap.from("#features .feature", {
+        duration: 1,
+        opacity: 0,
+        y: 50,
+        stagger: 0.2,
+        delay: 0.5,
+        ease: "power2.out"
+    });
+</script>
+{% endblock body %}

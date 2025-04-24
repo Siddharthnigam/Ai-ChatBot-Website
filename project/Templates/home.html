@@ -1,0 +1,414 @@
+{% extends "base.html" %}
+{% block body %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexcent</title>
+    <link rel="stylesheet" href="{% static 'home.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+</head>
+<style>
+    body {
+    margin: 0;
+    padding: 0;
+    background-color: white;
+}
+
+
+main {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    height: 80vh;
+    padding: 50px;
+    background-color: #fff;
+}
+
+.hero {
+    max-width: 50%;
+
+}
+
+.hero h1 {
+    font-size: 60px;
+    margin: 0;
+    font-weight: 600;
+}
+
+.hero h1 span {
+    color: #28a745;
+}
+
+.hero p {
+    font-size: 18px;
+    color: #666;
+}
+
+.register {
+    display: inline-block;
+    margin-top: 20px;
+    background-color: #28a745;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+.illustration{
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.illustration img {
+    max-width: 70%;
+    height: auto;
+}
+
+.clients-section {
+    text-align: center;
+    padding: 30px;
+    background-color: white;
+}
+
+.clients-section h2 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: black;
+}
+
+.clients-section p {
+    font-size: 1.2em;
+    color: #131212;
+    margin-bottom: 20px;
+}
+
+.clients-logos {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    gap: 80px;
+    flex-wrap: wrap; /* Adjusts layout for smaller screens */
+}
+
+.clients-logos img {
+    max-width: 200px;
+    border-radius: 30%;
+    height: auto;
+}
+.nextcent-info {
+    padding: 40px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.nextcent-info h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: black;
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+
+
+.categories {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    flex-wrap: wrap; /* Adjust layout for smaller screens */
+}
+
+.category {
+    max-width: 300px;
+}
+
+.category h4 {
+    font-size: 1.5em;
+    font-weight: 600;
+    color: black;
+    margin-bottom: 10px;
+}
+
+.category p {
+    font-size: 1.1em;
+    color: #666;
+}
+
+
+.carousel-item img {
+    width: 600px;
+    height: 50vh;
+    max-height: 400px;
+    margin: auto;
+}
+.pixelgrade-experience {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px;
+    background-color: #f9f9f9;
+}
+
+.illustration-container {
+    flex: 1;
+    text-align: center;
+}
+
+.illustration-container img {
+    max-width: 80%;
+    height: auto;
+}
+
+.content-container {
+    flex: 1;
+    padding: 20px;
+    text-align: left;
+}
+
+.content-container h2 {
+    font-size: 2.5em;
+    font-weight: 400;
+    color: black;
+    margin-bottom: 20px;
+}
+
+.content-container p {
+    font-size: 1.2em;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.learn-more {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.learn-more:hover {
+    background-color: #218838;
+}
+
+
+.footer {
+    text-align: center;
+    padding: 40px;
+    background-color: #000; /* Black background */
+    color: #fff; /* White font */
+}
+
+.footer h2 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    color: #fff; /* Ensure all text remains white */
+}
+
+.demo-button {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #28a745; /* Keep the button green for contrast */
+    color: #fff; /* White text */
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.demo-button:hover {
+    background-color: #218838;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    flex-wrap: wrap; /* Maintains alignment on smaller screens */
+    gap: 20px;
+}
+
+.footer-logo {
+    flex: 1;
+    text-align: left;
+}
+
+.footer-logo .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #28a745; /* Adds a distinct green color to the brand name */
+}
+
+.footer-logo .social-icons a img {
+    filter: brightness(0) invert(1); /* Adjusts icons for black background */
+}
+
+.footer-links {
+    flex: 1;
+}
+
+.footer-links h4 {
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links ul li {
+    margin-bottom: 8px;
+}
+
+.footer-links ul li a {
+    text-decoration: none;
+    color: #fff; /* Links in white */
+}
+
+.footer-links ul li a:hover {
+    color: #28a745; /* Green hover color for visibility */
+}
+
+.footer-newsletter {
+    flex: 1;
+}
+
+.footer-newsletter h4 {
+    color: #fff;
+}
+
+.footer-newsletter input {
+    padding: 10px;
+    width: calc(100% - 50px);
+    border: 1px solid #555;
+    background-color: #000;
+    color: #fff;
+    border-radius: 5px 0 0 5px;
+}
+
+.footer-newsletter button {
+    padding: 10px;
+    background-color: #28a745;
+    border: none;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+}
+
+</style>
+<body>
+ 
+    <main>
+        <section class="hero">
+            <h1>Lessons and Insights Of Decades <br> from <span>Ai Chatbot</span></h1>
+            <p>Timeless Lessons and Insights from AI Chatbot Innovation</p>
+            <a href="{% url 'ai' %}" class="register">Use AI</a>
+        </section>
+        <section class="illustration">
+            <img src="{% static 'C:\Users\siddh\OneDrive\Desktop\project 1 jango\project\static\images\hero.jpeg' %}" alt="Illustration of person with laptop and code">
+        </section>
+    </main>
+
+<section class="clients-section">
+    <h2>Our Users</h2>
+    <p>We have developed a technology that is versatile and accessible for professionals across all fields.</p>
+    <div class="clients-logos">
+        <img src="{%static 'C:\Users\siddh\OneDrive\Desktop\project 1 jango\project\static\images\history students.png' %}" alt="Client Logo 1">
+        <img src="{%static 'C:\Users\siddh\OneDrive\Desktop\project 1 jango\project\static\images\IT student.png' %}" alt="Client Logo 2">
+        <img src="{%static 'C:\Users\siddh\OneDrive\Desktop\project 1 jango\project\static\images\Science student.png' %}" alt="Client Logo 3">
+        <img src="{%static 'C:\Users\siddh\OneDrive\Desktop\project 1 jango\project\static\images\stock marketers.png'%}" alt="Client Logo 4">
+        <img src="{%static 'C:\Users\siddh\OneDrive\Desktop\project 1 jango\project\static\images\teacher.png' %}" alt="Client Logo 5">
+        <!-- <img src="" alt="Client Logo 6"> -->
+    </div>
+</section>
+<br><br><br>
+<section class="nextcent-info">
+    <div class="description">
+        <h2>Benifits of using our Ai Assistant</h2>
+  <br>
+        <div class="categories">
+            <div class="category">
+                <h4>Versatile Use Across Industries</h4>
+                <p>Perfect for e-commerce, healthcare, education, customer support, and beyond.</p>
+            </div>
+            <div class="category">
+                <h4>Enhanced User Experience</h4>
+                <p>Provides instant and accurate responses, ensuring satisfaction.</p>
+            </div>
+            <div class="category">
+                <h4>Personalization</h4>
+                <p>Learns from interactions to offer tailored responses, creating a human-like connection.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+  <br>
+  <section class="pixelgrade-experience">
+    <div class="illustration-container">
+        <img src="{% static 'C:\Users\siddh\OneDrive\Desktop\project 1 jango\project\static\images\a man personalizing his own AI.png'%}" alt="Illustration of interaction with a mobile screen">
+    </div>
+    <div class="content-container">
+        <h2>Your personalised Ai chatbot which you are going to train.</h2>
+        <p>"Empower yourself with cutting-edge technology by creating your own personalized AI chatbot. Tailored to your unique needs and preferences, this chatbot adapts dynamically to provide smarter, more relevant interactions. Whether you're looking to streamline communication, enhance user experiences, or simply explore the possibilities of AI, your custom chatbot is designed to meet your goals with precision and creativity. Unlock limitless potential and shape an AI that truly reflects your vision."</p>
+        <a href="{% url 'train_ai' %}" class="learn-more">Learn More</a>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+<section class="footer">
+    <h2>Welcome To Jugglers.in.</h2>
+    <a href="#" class="demo-button">Get Started →</a>
+    <div class="footer-content">
+        <div class="footer-logo">
+            <span class="logo">Jugglers.in</span>
+            <p>Copyright © 2025 Jugglers.in. All rights reserved</p>
+      
+        </div>
+        <div class="footer-links">
+            <h4>Company</h4>
+            <ul>
+                <li><a href="#"> Home</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact us</a></li>
+                <li><a href="#">About us</a></li>
+                <li><a href="#">Login </a></li>
+            </ul>
+        </div>
+       
+        <div class="footer-newsletter">
+            <h4>Stay up to date</h4>
+            <form action="#" method="post">
+                <input type="email" placeholder="Enter your email">
+                <button type="submit"><img src="{% static 'myapp/paper-plane-icon.png' %}" alt="Send"></button>
+            </form>
+        </div>
+    </div>
+</section>
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+{% endblock body %}

@@ -1,0 +1,296 @@
+{% extends "base.html" %}
+{% load static %}
+{% block body %}
+<style>
+  body {
+    font-family: 'Verdana', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+  }
+
+  .hello h1, h2 {
+    font-size: 2rem;
+    color: #002d62;
+  }
+
+  .hello p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+  }
+
+  .hello .section {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+  }
+
+  .hello .content {
+    display: flex;
+    align-items: center;
+    margin-bottom: 50px;
+  }
+
+  .hello .content.single {
+    text-align: center;
+  }
+
+  .hello .content img {
+    width: 50%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 10px;
+    margin-right: 20px;
+  }
+
+  .hello .content.reverse img {
+    margin-left: 20px;
+    margin-right: 0;
+  }
+
+  .hello .content-text {
+    flex: 1;
+  }
+
+  .hello .action-button {
+    display: inline-block;
+    margin-top: 20px;
+    width: 400px;
+    padding: 10px 25px;
+    background-color: #007f00;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.2rem;
+  }
+
+  .hello .action-button:hover {
+    background-color: #005a00;
+  }
+
+  
+.footer {
+    text-align: center;
+    padding: 40px;
+    background-color: #000; /* Black background */
+    color: #fff; /* White font */
+}
+
+.footer h2 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    color: #fff; /* Ensure all text remains white */
+}
+
+.demo-button {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #28a745; /* Keep the button green for contrast */
+    color: #fff; /* White text */
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.demo-button:hover {
+    background-color: #218838;
+}
+
+
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    flex-wrap: wrap; /* Maintains alignment on smaller screens */
+    gap: 20px;
+}
+
+.footer-logo {
+    flex: 1;
+    text-align: left;
+}
+
+.footer-logo .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #28a745; /* Adds a distinct green color to the brand name */
+}
+
+.footer-logo .social-icons a img {
+    filter: brightness(0) invert(1); /* Adjusts icons for black background */
+}
+
+.footer-links {
+    flex: 1;
+}
+
+.footer-links h4 {
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links ul li {
+    margin-bottom: 8px;
+}
+
+.footer-links ul li a {
+    text-decoration: none;
+    color: #fff; /* Links in white */
+}
+
+.footer-links ul li a:hover {
+    color: #28a745; /* Green hover color for visibility */
+}
+
+.footer-newsletter {
+    flex: 1;
+}
+
+.footer-newsletter h4 {
+    color: #fff;
+}
+
+.footer-newsletter input {
+    padding: 10px;
+    width: calc(100% - 50px);
+    border: 1px solid #555;
+    background-color: #000;
+    color: #fff;
+    border-radius: 5px 0 0 5px;
+}
+
+.footer-newsletter button {
+    padding: 10px;
+    background-color: #28a745;
+    border: none;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+}
+
+
+</style>
+
+<div class="hello">
+    <div class="section" id="welcome">
+      <div class="content">
+        <img src="{%static 'C:\Users\siddh\OneDrive\Desktop\project 1 jango\project\static\images\IT student.png' %}" alt="Welcome Image">
+        <div class="content-text">
+          <h1>Welcome to Jugglers.in</h1>
+          <p>
+            At Jugglers.in, we’re not just an AI chatbot – we’re your gateway to smarter, seamless, and engaging conversations. Since our launch in 2025, our mission has been to redefine how people interact with technology – empowering users with intelligent, personalized, and always-available assistance.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="story">
+      <div class="content single">
+        <h2>Our Story</h2>
+        <p>
+          Jugglers.in was created with a vision to revolutionize the way people connect with AI. Our founders saw the potential of conversational AI to simplify lives and bridge gaps in communication. From humble beginnings to becoming a trusted digital assistant platform, we’ve remained committed to delivering reliable, innovative, and delightful experiences.
+        </p>
+      </div>
+    </div>
+
+    <div class="section" id="stand">
+      <div class="content reverse">
+        <img src="{%static 'C:\Users\siddh\OneDrive\Desktop\project 1 jango\project\static\images\teacher.png' %}" alt="What We Stand For Image">
+        <div class="content-text">
+          <h2>What We Stand For</h2>
+          <ul>
+            <li><strong>Empowerment:</strong> Providing users with actionable information and insights to boost productivity and creativity.</li>
+            <li><strong>Intelligence:</strong> Combining advanced AI capabilities with intuitive design for seamless conversations.</li>
+            <li><strong>Accessibility:</strong> Ensuring that everyone, regardless of background or technical expertise, can benefit from AI-driven interactions.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="team">
+      <div class="content">
+        <img src="{%static 'C:\Users\siddh\OneDrive\Desktop\project 1 jango\project\static\images\stock marketers.png'%}" alt="Meet the Team Image">
+        <div class="content-text">
+          <h2>Meet the Team</h2>
+          <p>
+            Behind Jugglers.in is a team of passionate AI developers, designers, and tech enthusiasts. Together, we work tirelessly to bring you a chatbot that blends cutting-edge technology with a human touch. Our diverse backgrounds fuel our creativity and drive us to keep improving.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="join">
+      <div class="content single">
+        <h2>Why Join Us?</h2>
+        <p>
+          By choosing Jugglers.in, you’re not just chatting – you’re becoming part of an AI revolution. Join us on our journey to transform conversations into meaningful interactions. Intelligent. Adaptive. Yours.
+        </p>
+        <a href="{% url 'services' %}" class="action-button">Get Started →</a>
+      </div>
+    </div>
+</div>
+
+<section class="footer">
+    <h2>Welcome To Jugglers.in.</h2>
+    <a href="#" class="demo-button">Get Started →</a>
+    <div class="footer-content">
+        <div class="footer-logo">
+            <span class="logo">Jugglers.in</span>
+            <p>Copyright © 2025 Jugglers.in. All rights reserved</p>
+          
+        </div>
+        <div class="footer-links">
+            <ul>
+                <li><a href="#"> Home</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact us</a></li>
+                <li><a href="#">About us</a></li>
+                <li><a href="#">Login </a></li>
+            </ul>
+        </div>
+       
+        <div class="footer-newsletter">
+            <h4>Stay up to date</h4>
+            <form action="#" method="post">
+                <input type="email" placeholder="Enter your email">
+                <button type="submit"><img src="{% static 'myapp/paper-plane-icon.png' %}" alt="Send"></button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script>
+  // Animate each section into view
+  gsap.from(".section", {
+    opacity: 0,
+    y: 50,
+    duration: 1,
+    stagger: 0.3,
+    ease: "power2.out"
+  });
+
+  // Fade-in content within sections
+  gsap.from(".content-text, .content img", {
+    opacity: 0,
+    x: -50,
+    duration: 1,
+    stagger: 0.2,
+    ease: "power2.out"
+  });
+
+  // Add attention-grabbing animation for the call-to-action button
+  gsap.to(".action-button", {
+    scale: 1.05,
+    duration: 0.7,
+    repeat: -1,
+    yoyo: true,
+    ease: "power1.inOut"
+  });
+</script>
+{% endblock body %}

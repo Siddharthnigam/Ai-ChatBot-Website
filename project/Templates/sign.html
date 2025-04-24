@@ -1,0 +1,217 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block body %}
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      align-items: center;
+      height: 100vh;
+      background-color: #f4f4f9;
+    }
+
+    .signup-container {
+      margin-top:10%;
+      width: 300px;
+      padding: 20px;
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .signup-container h2 {
+      margin: 0 0 20px;
+      text-align: center;
+      color: #333333;
+    }
+
+    .signup-container input[type="text"],
+    .signup-container input[type="email"],
+    .signup-container input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #cccccc;
+      border-radius: 4px;
+    }
+
+    .signup-container button {
+      width: 100%;
+      padding: 10px;
+      background-color: #0066cc;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .signup-container button:hover {
+      background-color: #004c99;
+    }
+
+    .signup-container p {
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    .signup-container p a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+
+    
+  
+.footer {
+    text-align: center;
+    padding: 40px;
+    background-color: #000; /* Black background */
+    color: #fff; /* White font */
+}
+
+.footer h2 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    color: #fff; /* Ensure all text remains white */
+}
+
+.demo-button {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #28a745; /* Keep the button green for contrast */
+    color: #fff; /* White text */
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.demo-button:hover {
+    background-color: #218838;
+}
+
+
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    flex-wrap: wrap; /* Maintains alignment on smaller screens */
+    gap: 20px;
+}
+
+.footer-logo {
+    flex: 1;
+    text-align: left;
+}
+
+.footer-logo .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #28a745; /* Adds a distinct green color to the brand name */
+}
+
+.footer-logo .social-icons a img {
+    filter: brightness(0) invert(1); /* Adjusts icons for black background */
+}
+
+.footer-links {
+    flex: 1;
+}
+
+.footer-links h4 {
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links ul li {
+    margin-bottom: 8px;
+}
+
+.footer-links ul li a {
+    text-decoration: none;
+    color: #fff; /* Links in white */
+}
+
+.footer-links ul li a:hover {
+    color: #28a745; /* Green hover color for visibility */
+}
+
+.footer-newsletter {
+    flex: 1;
+}
+
+.footer-newsletter h4 {
+    color: #fff;
+}
+
+.footer-newsletter input {
+    padding: 10px;
+    width: calc(100% - 50px);
+    border: 1px solid #555;
+    background-color: #000;
+    color: #fff;
+    border-radius: 5px 0 0 5px;
+}
+
+.footer-newsletter button {
+    padding: 10px;
+    background-color: #28a745;
+    border: none;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+}
+
+
+  </style>
+
+
+ <center> <div class="signup-container">
+    <h2>Sign Up</h2>
+    <form method="POST" action="/sign/">
+      {% csrf_token %}
+      <input type="text" name="name" placeholder="Full Name" required>
+      <input type="email" name="email" placeholder="Email" required>
+      <input type="password" name="password" placeholder="Password" required>
+      <input type="password" name="confirm" placeholder="Confirm Password" required>
+      <button type="submit">Sign Up</button>
+    </form>
+    <p>Already have an account? <a href="{% url 'login'%}">Login</a></p>
+  </div></center>
+
+  <br><br><br><br><br>
+<section class="footer">
+    <h2>Welcome To Jugglers.in.</h2>
+    <a href="#" class="demo-button">Get Started →</a>
+    <div class="footer-content">
+        <div class="footer-logo">
+            <span class="logo">Jugglers.in</span>
+            <p>Copyright © 2025 Jugglers.in. All rights reserved</p>
+           
+        </div>
+        <div class="footer-links">
+            <ul>
+                <li><a href="#"> Homw</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact us</a></li>
+                <li><a href="#">About us</a></li>
+                <li><a href="#">Login </a></li>
+            </ul>
+        </div>
+       
+        <div class="footer-newsletter">
+            <h4>Stay up to date</h4>
+            <form action="#" method="post">
+                <input type="email" placeholder="Enter your email">
+                <button type="submit"><img src="{% static 'myapp/paper-plane-icon.png' %}" alt="Send"></button>
+            </form>
+        </div>
+    </div>
+</section>
+
+
+{% endblock body %}
